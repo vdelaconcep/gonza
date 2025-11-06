@@ -1,0 +1,29 @@
+import Primario from "@/components/botones/primario";
+import Secundario from "@/components/botones/secundario";
+import Secundariov2 from "@/components/botones/secundariov2";
+import Secundariov3 from "@/components/botones/secundariov3";
+
+const Principal = () => {
+    return (
+        <main className="bg-white flex-1">
+            <div className="flex justify-center p-10">
+                <Primario />
+            </div>
+            <div className="flex justify-center p-10">
+                <Secundario />
+            </div>
+            <div className="flex justify-center bg-black p-10">
+                <Secundariov2 />
+            </div>
+            <div className="flex justify-center bg-black p-10">
+                <Secundariov3 />
+            </div>
+            <div className="flex justify-center p-10">
+                <Secundariov3 />
+            </div>
+            
+        </main>
+    );
+};
+
+export default Principal;
