@@ -2,12 +2,13 @@ import Primario from "@/components/botones/primario";
 import Secundario from "@/components/botones/secundario";
 import Secundariov2 from "@/components/botones/secundariov2";
 import Secundariov3 from "@/components/botones/secundariov3";
+import PrimarioAnimado from "@/components/botones/primarioAnimado";
 
 const Principal = () => {
     return (
         <main className="bg-white flex-1">
-            <div className="flex justify-center p-10">
-                <Primario />
+            <div className="flex justify-center gap-3 p-10">
+                <Primario /> <PrimarioAnimado />
             </div>
             <div className="flex justify-center p-10">
                 <Secundario />
@@ -21,6 +22,8 @@ const Principal = () => {
             <div className="flex justify-center p-10">
                 <Secundariov3 />
             </div>
+            
+
             
         </main>
     );
