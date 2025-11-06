@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ListaMobile = ({ items }) => {
 
@@ -14,17 +15,25 @@ const ListaMobile = ({ items }) => {
                         onClick={() => setDesplegado(desplegado === item.titulo ? "" : item.titulo)}>
                         {item.titulo}
                     </button>
-                    {desplegado === item.titulo &&
-                        <ul className="bg-white text-black w-full">
-                            {item.subItems.map(subItem =>
-                                <li
-                                    key={subItem.titulo_subItem}
-                                    className="py-4 active:bg-red-700 hover:bg-red-700 w-full text-center">
-                                    {subItem.titulo_subItem}
-                                </li>
-                            )}
-                        </ul>
-                    }
+                    <AnimatePresence>
+                        {desplegado === item.titulo &&
+                            <motion.ul
+                                className="bg-white text-black w-full"
+                                initial={{ height: 0, opacity: 0}}
+                                animate={{ height: 'auto', opacity: 1}}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                                {item.subItems.map(subItem =>
+                                    <li
+                                        key={subItem.titulo_subItem}
+                                        className="py-4 active:bg-red-700 hover:bg-red-700 w-full text-center">
+                                        {subItem.titulo_subItem}
+                                    </li>
+                                )}
+                            </motion.ul>
+                        }
+                    </AnimatePresence>
+                    
                 </li>
             )}
         </ul>
