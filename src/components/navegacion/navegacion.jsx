@@ -84,7 +84,7 @@ const Navegacion = () => {
             <AnimatePresence>
                 {abierto ?
                     <motion.article
-                        className="absolute top-16 left-0"
+                        className="absolute top-16 left-0 z-100"
                         initial={{ x: '-100%'}}
                         animate={{ x: 0}}
                         exit={{ x: '-100%'}}
