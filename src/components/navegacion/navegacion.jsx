@@ -1,19 +1,21 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import Menu from "@/components/navegacion/menu";
 import ListaMobile from "@/components/navegacion/listaMobile";
 
 const Navegacion = () => {
-
+    const location = useLocation();
+    const isHome = location.pathname === '/';
     const [abierto, setAbierto] = useState(false);
 
     const items = [
         {
-            titulo: "Item principal 1",
+            titulo: "UI Kit",
             subItems: [
                 {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
+                    titulo_subItem: "Botones",
+                    vinculo:"/botones"
                 },
                 {
                     titulo_subItem: "Item secundario",
@@ -79,7 +81,7 @@ const Navegacion = () => {
     ]
 
     return (
-        <nav className="bg-black px-2 text-white flex items-center relative">
+        <nav className={`bg-black px-2 text-white flex items-center shadow-sm shadow-gray-700 relative ${isHome ? 'relative' : 'fixed top-0 left-0 right-0 z-50'}`}>
             <Menu abierto={abierto} setAbierto={setAbierto} />
             <AnimatePresence>
                 {abierto ?

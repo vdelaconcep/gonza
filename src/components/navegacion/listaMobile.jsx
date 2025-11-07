@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const ListaMobile = ({ items }) => {
 
@@ -26,8 +27,9 @@ const ListaMobile = ({ items }) => {
                                 {item.subItems.map(subItem =>
                                     <li
                                         key={subItem.titulo_subItem}
-                                        className="py-4 active:bg-red-700 hover:bg-red-700 w-full text-center">
-                                        {subItem.titulo_subItem}
+                                        className="py-4 active:bg-red-700 hover:bg-red-700 w-full text-center flex justify-center"
+                                    >
+                                        <Link to={subItem.vinculo}>{subItem.titulo_subItem}</Link>
                                     </li>
                                 )}
                             </motion.ul>

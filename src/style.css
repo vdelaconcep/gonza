@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Caprasimo';
+    src: url('@/assets/fonts/Caprasimo-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'PollerOne';
+    src: url('@/assets/fonts/PollerOne-Regular.ttf');
+}
+
+.caprasimo {
+    font-family: 'Caprasimo';
+}
+
+.pollerOne {
+    font-family: 'PollerOne';
+}
