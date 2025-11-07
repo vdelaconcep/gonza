@@ -7,8 +7,11 @@ import PrimarioAnimado from "@/components/botones/primarioAnimado";
 const Principal = () => {
     return (
         <main className="bg-white flex-1">
-            <div className="flex justify-center gap-3 p-10">
-                <Primario /> <PrimarioAnimado />
+            <div className="flex flex-col items-center gap-3 p-10">
+                <Primario />
+            </div>
+            <div className="flex flex-col items-center gap-3 p-10">
+                <PrimarioAnimado />
             </div>
             <div className="flex justify-center p-10">
                 <Secundario />
