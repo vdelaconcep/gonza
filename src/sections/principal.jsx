@@ -1,7 +1,7 @@
 import fotoChica from '@/assets/img/vida-de-club-nocturno-de-alto-angulo-con-humo-colorido-y-dj-femenino-rojo.jpg';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import PrimarioAnimado from '@/components/botones/primarioAnimado';
+import Primario from '@/components/botones/primario';
 import Parallax from '@/components/parallax/parallax';
 import Navegacion from '@/components/navegacion/navegacion';
 
@@ -61,7 +61,7 @@ const Principal = () => {
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus sunt velit exercitationem explicabo eos facere cupiditate fugit laudantium cum voluptatibus cumque, fugiat nihil impedit ab, accusamus voluptas suscipit sed quam?
                         </p>
                         <article className='my-10 flex justify-end pr-5'>
-                            <PrimarioAnimado texto='Ver catálogo' />
+                            <Primario texto='Ver catálogo' />
                         </article>
                     </div>
                     
