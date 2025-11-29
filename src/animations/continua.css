@@ -1,3 +1,16 @@
+.center_triangle {
+    height: 0;
+    width: 0;
+    border-bottom: 20px solid;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 @keyframes grow {
     0% {
         scale: 0;
@@ -32,5 +45,4 @@
     animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    /* transform-origin: center bottom; */
 }
