@@ -28,11 +28,11 @@ const Navegacion = () => {
             ]
         },
         {
-            titulo: "Item principal 2",
+            titulo: "Animaciones",
             subItems: [
                 {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
+                    titulo_subItem: "Animación continua",
+                    vinculo:"/animaciones/continua"
                 },
                 {
                     titulo_subItem: "Item secundario",

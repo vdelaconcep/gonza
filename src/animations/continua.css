@@ -1,0 +1,36 @@
+@keyframes grow {
+    0% {
+        scale: 0;
+        z-index: 0;}
+    1% {
+        z-index: 60;
+    }
+    14.29% {
+        transform: scale(45);
+    z-index: 50;}
+    28.57% {
+        transform: scale(90);
+        z-index: 40;}
+    42.86% {
+        transform: scale(125);
+        z-index: 30;}
+    57.14% {
+        transform: scale(180);
+        z-index: 20;}
+    71.43% {
+        transform: scale(180);
+        z-index: 10;}
+    85.71% {
+        transform: scale(180);
+        z-index: 0;}
+    100% {transform: scale(0);
+    z-index: 0;}
+}
+
+.growing {
+    animation-name: grow;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform-origin: center bottom; */
+}
