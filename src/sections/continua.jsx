@@ -1,15 +1,15 @@
-import '@/animations/continua.css'
+import '@/animations/continua.css';
 
 const AnimacionContinua = () => {
     return (
         <div className='min-h-dvh w-full flex justify-center items-center overflow-hidden relative'>
             <article
-                style={{borderBottomColor: '#dc2626'}}
+                style={{ borderBottomColor: '#dc2626' }}
                 className='center_triangle growing'>
             </article>
-            
+
             <article
-                style={{borderBottomColor: '#000000', animationDelay:'1s'}}
+                style={{ borderBottomColor: '#000000', animationDelay: '1s' }}
                 className='center_triangle growing'>
             </article>
 
@@ -32,9 +32,9 @@ const AnimacionContinua = () => {
                 style={{ borderBottomColor: '#FFFFFF', animationDelay: '5s' }}
                 className='center_triangle growing'>
             </article>
-            
+
         </div>
-        
+
     );
 };
 

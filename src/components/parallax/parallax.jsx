@@ -4,7 +4,7 @@ import {
     useScroll,
     useTransform
 } from 'framer-motion';
-import { Children, ReactNode, useRef } from 'react';
+import { Children, useRef } from 'react';
 
 const Parallax = ({ children }) => {
     const target = useRef(null);
