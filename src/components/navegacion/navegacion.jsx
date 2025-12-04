@@ -1,87 +1,29 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { useState, useRef, useEffect} from "react";
 import Menu from "@/components/navegacion/menu";
 import ListaMobile from "@/components/navegacion/listaMobile";
+import { items } from '@/components/navegacion/items';
 
 const Navegacion = () => {
-    const location = useLocation();
-    const isHome = location.pathname === '/';
     const [abierto, setAbierto] = useState(false);
+    const navRef = useRef();
 
-    const items = [
-        {
-            titulo: "UI Kit",
-            subItems: [
-                {
-                    titulo_subItem: "Botones",
-                    vinculo:"/botones"
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                }
-            ]
-        },
-        {
-            titulo: "Animaciones",
-            subItems: [
-                {
-                    titulo_subItem: "Animación continua",
-                    vinculo:"/animaciones/continua"
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                }
-            ]
-        },
-        {
-            titulo: "Item principal 3",
-            subItems: [
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                }
-            ]
-        },
-        {
-            titulo: "Item principal 4",
-            subItems: [
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                },
-                {
-                    titulo_subItem: "Item secundario",
-                    vinculo:""
-                }
-            ]
+    useEffect(() => {
+        const closeMenu = (event) => {
+            if (!navRef.current?.contains(event.target)) {
+                setAbierto(false)
+            }
         }
-    ]
+
+        document.addEventListener('click', closeMenu);
+
+        return () => (document.removeEventListener('click', closeMenu))
+    }, [setAbierto])
 
     return (
-        <nav className={`bg-black px-2 text-white flex items-center shadow-sm shadow-gray-700 relative ${isHome ? 'relative' : 'fixed top-0 left-0 right-0 z-50'}`}>
+        <nav
+            ref={navRef}
+            className={'bg-black px-2 text-white flex items-center shadow-sm shadow-gray-700 fixed top-0 left-0 right-0 z-100'}>
             <Menu abierto={abierto} setAbierto={setAbierto} />
             <AnimatePresence>
                 {abierto ?
@@ -90,8 +32,10 @@ const Navegacion = () => {
                         initial={{ x: '-100%'}}
                         animate={{ x: 0}}
                         exit={{ x: '-100%'}}
-                    transition={{duration:0.3, ease:'easeInOut'}}>
-                        <ListaMobile items={items} />
+                        transition={{duration:0.3, ease:'easeInOut'}}>
+                        <ListaMobile
+                            items={items}
+                            setAbierto={setAbierto} />
                     </motion.article>
                 : null}
             </AnimatePresence>

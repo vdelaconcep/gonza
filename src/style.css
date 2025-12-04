@@ -2,18 +2,32 @@
 
 @font-face {
     font-family: 'Caprasimo';
-    src: url('@/assets/fonts/Caprasimo-Regular.ttf');
+    src: url('/fonts/Caprasimo-Regular.woff2'),
+        url('/fonts/Caprasimo-Regular.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'PollerOne';
-    src: url('@/assets/fonts/PollerOne-Regular.ttf');
+    src: url('/fonts/PollerOne-Regular.woff2'),
+        url('/fonts/PollerOne-Regular.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 .caprasimo {
-    font-family: 'Caprasimo';
+    font-family: 'Caprasimo',
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
 }
 
 .pollerOne {
-    font-family: 'PollerOne';
+    font-family: 'PollerOne',
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
 }

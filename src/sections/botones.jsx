@@ -6,7 +6,7 @@ import PrimarioAnimado from "@/components/botones/primarioAnimado";
 
 const Botones = () => {
     return (
-        <main className="bg-white flex-1">
+        <main className="bg-white flex-1 pt-16">
             <div className="flex flex-col items-center gap-3 p-10">
                 <Primario />
             </div>
