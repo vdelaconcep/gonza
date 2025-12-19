@@ -3,6 +3,7 @@ import Secundario from "@/components/botones/secundario";
 import Secundariov2 from "@/components/botones/secundariov2";
 import Secundariov3 from "@/components/botones/secundariov3";
 import PrimarioAnimado from "@/components/botones/primarioAnimado";
+import BotonVintage from "@/components/botones/vintage";
 
 const Botones = () => {
     return (
@@ -24,6 +25,9 @@ const Botones = () => {
             </div>
             <div className="flex justify-center p-10">
                 <Secundariov3 />
+            </div>
+            <div className="flex justify-center p-10">
+                <BotonVintage width={200} />
             </div>
             
 
